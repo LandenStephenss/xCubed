@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <%- include('./blocks/head.ejs') %>
+    <%- include('./blocks/nav.ejs') %>
+    <title>xCubed Commands</title>
+    <div style="display: flex; justify-content: flex-start; flex-wrap: wrap; background-color: rgba(0,0,0,.1); width: 80%; left: 10%; position: relative; border-radius: 10px; padding: 10px; top: 10px;">
+        <% if(filter) { %>
+            <button class="cmdBtn" style="background-color: rgb(92, 209, 170)" onclick="window.location.href= '/commands'">All</button>
+            <% } %>
+        <button class="cmdBtn" style="background-color: rgba(119, 209, 92, 1)" onclick="window.location.href= '/commands?filter=currency'">Currency</button>
+        <button class="cmdBtn" style="background-color: rgb(209, 207, 92)" onclick="window.location.href= '/commands?filter=fun'">Fun</button>
+        <button class="cmdBtn" style="background-color: rgb(230, 177, 63)" onclick="window.location.href= '/commands?filter=information'">Information</button>
+        <button class="cmdBtn" style="background-color: rgb(221, 124, 13)" onclick="window.location.href= '/commands?filter=levels'">Levels</button>
+        <button class="cmdBtn" style="background-color: rgb(209, 92, 92)" onclick="window.location.href= '/commands?filter=moderation'">Moderation</button>
+        
+    </div>
+    <br>
+    <div style="display: flex; justify-content: space-evenly; flex-wrap: wrap;">
+        <% if(!filter) { %> 
+            <% bot.commands.forEach((command) => { %>
+                <% if(command.config.developer) return; %>
+                <div class="CommandCard">
+                    <p><span style="color: #877EEB">Name:</span> <%= command.help.name %></p>
+                    <p><span style="color: #877EEB">Description:</span> <%= command.help.description %></p>
+                    <% if(command.config.aliases.length >= 1) { %> 
+                    <p><span style="color: #877EEB">Aliases:</span> <% command.config.aliases.forEach((alias) => { %>
+                        <span class="Alias"><%= alias %></span><span>,</span>
+                <%    }) %></p>
+                    <% } %>
+                </div>
+            <% }) %>
+        <% } else { %>
+        <% bot.commands.filter((f) => f.help.category.toLowerCase() === filter.toLowerCase()).forEach((command) => { %>
+            <% if(command.config.developer) return; %>
+            <div class="CommandCard">
+                <p><span style="color: #877EEB">Name:</span> <%= command.help.name %></p>
+                <p><span style="color: #877EEB">Description:</span> <%= command.help.description %></p>
+                <% if(command.config.aliases.length >= 1) { %> 
+                <p><span style="color: #877EEB">Aliases:</span> <% command.config.aliases.forEach((alias) => { %>
+                    <span class="Alias"><%= alias %></span><span>,</span>
+            <%    }) %></p>
+                <% } %>
+            </div>
+        <% }) %>
+
+        <% } %>
+    </div>
+    <%- include('./blocks/footer.ejs') %>
+</html>
