@@ -24,7 +24,8 @@ class Settings extends require('../../Assets/Structures/Commands/GenericCommand'
 				return {
 					embed: {
 						title: `Settings for ${message.guild.name}`,
-						description: `**Prefix**: ${prefix}\n**MuteRole**: ${muteRole === null ? 'None' : `<@&${muteRole}>`}`
+						description: `**Prefix**: ${prefix}\n**MuteRole**: ${muteRole === null ? 'None' : `<@&${muteRole}>`}`,
+						color: parseInt('877EEB', 16),
 					}
 				};
 			} else if (args[0].toLowerCase() === 'set') {
