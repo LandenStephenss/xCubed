@@ -14,7 +14,7 @@ const User = (user) => {
 		stats: {
 			howgay: Math.floor(Math.random() * 100),
 			dankrate: Math.floor(Math.random() * 100),
-			dick: Math.floor(Math.random() * 12),
+			dick: Math.floor(Math.random() * 13),
 			wins: {
 				ttt: 0,
 				unscram: 0,
