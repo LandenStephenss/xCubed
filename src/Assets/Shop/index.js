@@ -1,4 +1,4 @@
 module.exports = {
-    padLock: require("./padLock"),
-    cookie: require("./cookie"),
-}
+	padLock: require('./padLock'),
+	cookie: require('./cookie'),
+};

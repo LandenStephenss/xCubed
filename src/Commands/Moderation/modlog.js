@@ -6,7 +6,8 @@ class ModLog extends Command {
             description: "View the mod logs about a person",
             category: "moderation",
             userPerms: ["VIEW_AUDIT_LOG"],
-            aliases: ["modlogs"]
+            aliases: ["modlogs"],
+            enabled: false,
         })
         this.callback = async ({
             message,
