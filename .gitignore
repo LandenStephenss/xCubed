@@ -3,3 +3,4 @@ package-lock.json
 devConfig.json
 prodConfig.json
 sharding.js
+commands.json
