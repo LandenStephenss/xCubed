@@ -2,7 +2,7 @@ const {
 	Client,
 	Collection
 } = require('discord.js');
-require("discord.js/src/util/Constants").DefaultOptions.ws.properties.$browser = "Discord iOS"
+//require("discord.js/src/util/Constants").DefaultOptions.ws.properties.$browser = "Discord iOS"
 const {
 	MongoClient
 } = require('mongodb');
