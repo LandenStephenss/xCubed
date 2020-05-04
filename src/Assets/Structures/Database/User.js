@@ -34,7 +34,8 @@ const User = (user) => {
 			cookie: 0,
 			laptop: 0,
 			padLock: 0
-		}
+		},
+		avatar: user.displayAvatarURL()
 	};
 };
 

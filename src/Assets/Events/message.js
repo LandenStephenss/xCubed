@@ -57,7 +57,8 @@ class Message {
 			}, {
 				$set: {
 					'levels.level': xp > this.levels.filter((f) => f.level === level)[0].xp ? level + 1 : level,
-					'levels.xp': xp + (booster ? Math.floor(Math.random() * 30) + 15 : Math.floor(Math.random() * 15) + 15)
+					'levels.xp': xp + (booster ? Math.floor(Math.random() * 30) + 15 : Math.floor(Math.random() * 15) + 15),
+					'avatar': message.author.displayAvatarURL()
 				}
 			});
 			if (xp > this.levels.filter((f) => f.level === level)[0].xp) {
