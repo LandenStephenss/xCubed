@@ -1,0 +1,13 @@
+{
+  "titles": ["{author} hugs {mention}", "{author} gives {mention} a big hug"],
+  "images": [
+    "https://media.giphy.com/media/od5H3PmEG5EVq/giphy.gif",
+    "https://media.giphy.com/media/wnsgren9NtITS/giphy.gif",
+    "https://media.giphy.com/media/kvKFM3UWg2P04/giphy.gif",
+    "https://media.giphy.com/media/143v0Z4767T15e/giphy.gif",
+    "https://media.giphy.com/media/yziFo5qYAOgY8/giphy.gif",
+    "https://media.giphy.com/media/HaC1WdpkL3W00/giphy.gif",
+    "https://media.giphy.com/media/iMrHFdDEoxT5S/giphy.gif",
+    "https://media.giphy.com/media/SLLYpDiMCvKbS/giphy.gif"
+  ]
+}
