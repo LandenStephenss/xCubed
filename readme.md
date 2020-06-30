@@ -1,4 +1,6 @@
-[![Upvotes](https://top.gg/api/widget/upvotes/626630111004852224.svg)](https://top.gg/bot/626630111004852224)
+[![Upvotes](https://top.gg/api/widget/upvotes/626630111004852224.svg?noavatar=true)](https://top.gg/bot/626630111004852224)
+[![Upvotes](https://top.gg/api/widget/status/626630111004852224.svg?noavatar=true)](https://top.gg/bot/626630111004852224)
+[![Upvotes](https://top.gg/api/widget/lib/626630111004852224.svg?noavatar=true)](https://top.gg/bot/626630111004852224)
 # xCubed
 xCubed is a discord bot with simplicity in mind. You are not allowed to use this code to self host your own xCubed, this is purely for reference
 - - -
