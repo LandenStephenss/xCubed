@@ -6,7 +6,7 @@ module.exports = class Riche extends require("../../../Stuctures/Commands/Generi
       description: "View who in the server is the richest",
     });
   }
-  async run({ client, message: { guild } }) {
+  async run({ client, message: { guild, author }, args }) {
     var message = {
       embed: {
         author: {
@@ -16,31 +16,38 @@ module.exports = class Riche extends require("../../../Stuctures/Commands/Generi
         fields: [],
       },
     };
-
+    var page;
+    if (!args[0] || isNaN(args[0])) {
+      page = 0;
+    } else {
+      page = parseInt(args[0]);
+    }
     var arr = await client.userDB.find().toArray();
     arr = arr.filter((user) => guild.members.cache.has(user._id));
-    arr = arr.sort((a, b) => b.currency.wallet - a.currency.wallet).slice(0, 5);
-
-    for (const {
-      _id,
-      currency: { wallet },
-    } of arr) {
-      if (wallet == 0) return;
-      switch (_id) {
-        case arr[0]._id:
-          message.embed.fields.push({
-            name: `${await client.users.cache.get(_id).username}`,
-            value: wallet,
-          });
-          break;
-        default:
-          message.embed.fields.push({
-            name: `${await client.users.cache.get(_id).username}`,
-            value: wallet,
-          });
-          break;
-      }
-    }
-    return message;
+    arr = arr
+      .sort((a, b) => b.currency.wallet - a.currency.wallet)
+      .slice(0, 25);
+    return {
+      embed: {
+        footer: {
+          text: `Page ${page}/${Math.floor(
+            arr.length / 5
+          )}`,
+        },
+        author: {
+          icon_url: guild.iconURL(),
+          name: `${guild.name}'s Richest Users!`,
+        },
+        description: `${arr
+          .slice(0 + page * 5, 5 + page * 5)
+          .map(
+            (f) =>
+              `**${client.users.cache.get(f._id).username}**: ${
+                f.currency.wallet
+              }`
+          )
+          .join("\n")}`,
+      },
+    };
   }
 };

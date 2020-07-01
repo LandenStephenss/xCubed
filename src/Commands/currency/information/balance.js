@@ -1,3 +1,4 @@
+const { FormatNumber } = require("../../../Assets/util");
 module.exports = class Balance extends require("../../../Stuctures/Commands/GenericCommand") {
   constructor() {
     super({
@@ -22,10 +23,11 @@ module.exports = class Balance extends require("../../../Stuctures/Commands/Gene
     return {
       embed: {
         title: `${user.username}'s Balance`,
-        fields: [
-          { name: "Wallet", value: wallet },
-          { name: "Bank", value: bank },
-        ],
+        description: `**Wallet**: ${FormatNumber(
+          wallet
+        )}\n**Bank**: ${FormatNumber(bank)}\n**Total**: ${FormatNumber(
+          wallet + bank
+        )}`,
       },
     };
   }
