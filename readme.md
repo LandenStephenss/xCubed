@@ -23,3 +23,4 @@ xCubed is a discord bot with simplicity in mind. You are not allowed to use this
 
 hey im testing webhooks so lets ignore these next few commits
 another test
+once again a test
