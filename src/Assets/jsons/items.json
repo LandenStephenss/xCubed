@@ -27,7 +27,7 @@
     "buyable": true,
     "type": "Collectable"
   },
-  "fishingPole": {
+  "fishingpole": {
     "description": "You can finally go fishing!",
     "price": 10000,
     "name": "🎣 Fishing Pole",

@@ -1,4 +1,5 @@
-const Items = require("../../../Assets/jsons/items.json");
+var Items = require("../../../Assets/jsons/items.json");
+// Items = Object.entries(Items);
 module.exports = class Inventory extends require("../../../Stuctures/Commands/GenericCommand") {
   constructor() {
     super({
@@ -12,7 +13,6 @@ module.exports = class Inventory extends require("../../../Stuctures/Commands/Ge
   async run({ message: { author }, client }) {
     var { inv } = await client.userDB.findOne({ _id: author.id });
     inv = Object.entries(inv).filter((f) => f[1] >= 1);
-    console.log(inv);
     if (inv.length === 0) {
       return {
         embed: {
@@ -21,16 +21,21 @@ module.exports = class Inventory extends require("../../../Stuctures/Commands/Ge
         },
       };
     } else {
-      // TODO: actually display inventory
-      console.log(Items["cookie"].name);
       return {
         embed: {
-          title: `${author.username}'s Inventory`,
-          description: `${inv
-            .map((f) => `**${Items[f[0]].name}**: ${f[1]}`)
-            .join("\n")}`,
+          description: inv
+            .map((f) => `**${Items[f[0]].name}**: ${f[1]} *${Items[f[0]].type}*`)
+            .join("\n"),
         },
       };
+      // return {
+      //   embed: {
+      //     title: `${author.username}'s Inventory`,
+      //     description: inv.map((f) =>
+      //       Items.filter((s) => s[0].toLowerCase() === f)
+      //     ),
+      //   },
+      // };
     }
   }
 };

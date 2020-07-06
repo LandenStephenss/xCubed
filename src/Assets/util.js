@@ -18,4 +18,13 @@ module.exports = {
   FormatNumber: (number) => {
     return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
   },
+  GiveCoins: async (userID, amount, userDB) => {
+    var {
+      currency: { wallet },
+    } = await userDB.findOne({ _id: userID });
+    await userDB.updateOne(
+      { _id: userID },
+      { $set: { "currency.wallet": wallet + amount } }
+    );
+  },
 };
