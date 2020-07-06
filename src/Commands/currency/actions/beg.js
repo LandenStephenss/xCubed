@@ -6,6 +6,7 @@ module.exports = class Beg extends require("../../../Stuctures/Commands/GenericC
       name: "beg",
       description: "Beg for some coins",
       category: "currency",
+      aliases: ["plead"],
     });
   }
   async run({ message: { author }, client }) {

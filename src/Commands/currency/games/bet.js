@@ -5,6 +5,7 @@ module.exports = class Bet extends require("../../../Stuctures/Commands/GenericC
       category: "currency",
       description: "Bet your money away!",
       botPerms: ["EMBED_LINKS"],
+      aliases: ["gamble"]
     });
   }
   async run({ client, args, message: { author } }) {

@@ -9,6 +9,7 @@ module.exports = class Shop extends require("../../../Stuctures/Commands/Generic
       description: "Buy some goodies",
       botPerms: ["EMBED_LINKS"],
       usage: "{c} `<item>`",
+      aliases: ["store"]
     });
   }
   async run({ args }) {

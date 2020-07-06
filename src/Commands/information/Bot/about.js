@@ -14,7 +14,7 @@ module.exports = class About extends require("../../../Stuctures/Commands/Generi
         title: "About xCubed",
         color: 8879851,
         description:
-          "xCubed is a multipurpose discord bot made for any server!\n\n**Links**:\n[Support Server](https://discord.gg/kQUpSgw)\n[Patreon](https://patreon.com/Olykir)\n[Website](https://xcubed.xyz)",
+          "xCubed is a multipurpose discord bot made for any server!\n\n**Links**:\n[Support Server](https://discord.gg/kQUpSgw)\n[Patreon](https://patreon.com/Olykir)\n[Website](https://xcubed.xyz)\n[Source](https://github.com/LandenStephenss/xCubed)",
       },
     };
   }

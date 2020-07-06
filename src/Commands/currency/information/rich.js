@@ -5,6 +5,7 @@ module.exports = class Riche extends require("../../../Stuctures/Commands/Generi
       name: "rich",
       category: "currency",
       description: "View who in the server is the richest",
+      aliases: ["moneys"],
     });
   }
   async run({ client, message: { guild, author }, args }) {

@@ -6,6 +6,7 @@ module.exports = class Blacklist extends require("../../../Stuctures/Commands/Ge
       usage: "{c} `<user>`",
       category: "developer",
       description: "Blacklist a user from using the bot!",
+      aliases: ["bl"]
     });
   }
   async run({

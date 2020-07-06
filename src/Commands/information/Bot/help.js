@@ -24,7 +24,7 @@ module.exports = class Help extends require("../../../Stuctures/Commands/Generic
             groups.push(command.help.category.toLowerCase());
           }
         });
-        groups.forEach((group) => {
+        groups.sort().forEach((group) => {
           if (
             group === "developer" &&
             !client.config.developers.includes(message.author.id)
