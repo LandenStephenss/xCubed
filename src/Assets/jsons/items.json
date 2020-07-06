@@ -1,0 +1,58 @@
+{
+  "cookie": {
+    "description": "A nice cookie for you",
+    "price": 250,
+    "name": "🍪 Cookie",
+    "buyable": true,
+    "type": "Collectable"
+  },
+  "laptop": {
+    "description": "A laptop for you to do bad things",
+    "price": 5000,
+    "name": "💻 Laptop",
+    "buyable": true,
+    "type": "Item"
+  },
+  "padlock": {
+    "description": "Protect your wallet with a padlock",
+    "price": 500,
+    "name": "🔐 Pad Lock",
+    "buyable": true,
+    "type": "Item"
+  },
+  "icecube": {
+    "description": "Want some ice?",
+    "price": 1000,
+    "name": "🧊 Ice Cube",
+    "buyable": true,
+    "type": "Collectable"
+  },
+  "fishingPole": {
+    "description": "You can finally go fishing!",
+    "price": 10000,
+    "name": "🎣 Fishing Pole",
+    "buyable": true,
+    "type": "Item"
+  },
+  "fish": {
+    "description": "Fishy",
+    "price": 250,
+    "name": "🐟 Fish",
+    "buyable": false,
+    "type": "Collectable"
+  },
+  "rarefish": {
+    "description": "Fishy but better",
+    "price": 500,
+    "name": "🐠 Rare Fish",
+    "buyable": false,
+    "type": "Collectable"
+  },
+  "flag": {
+    "description": "Buy flag as a slave",
+    "price": 250000,
+    "name": "🇵🇹 Flag",
+    "buyable": true,
+    "type": "Slave"
+  }
+}

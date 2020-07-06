@@ -1,3 +1,4 @@
+const { FormatNumber } = require("../../../Assets/util");
 module.exports = class Riche extends require("../../../Stuctures/Commands/GenericCommand") {
   constructor() {
     super({
@@ -30,9 +31,7 @@ module.exports = class Riche extends require("../../../Stuctures/Commands/Generi
     return {
       embed: {
         footer: {
-          text: `Page ${page}/${Math.floor(
-            arr.length / 5
-          )}`,
+          text: `Page ${page}/${Math.floor(arr.length / 5)}`,
         },
         author: {
           icon_url: guild.iconURL(),
@@ -42,9 +41,9 @@ module.exports = class Riche extends require("../../../Stuctures/Commands/Generi
           .slice(0 + page * 5, 5 + page * 5)
           .map(
             (f) =>
-              `**${client.users.cache.get(f._id).username}**: ${
+              `**${client.users.cache.get(f._id).username}**: ${FormatNumber(
                 f.currency.wallet
-              }`
+              )}`
           )
           .join("\n")}`,
       },

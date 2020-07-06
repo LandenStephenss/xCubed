@@ -30,11 +30,7 @@ const User = (user) => {
       weeklyLastUsed: null,
       streak: 0,
     },
-    inv: {
-      cookie: 0,
-      laptop: 0,
-      padLock: 0,
-    },
+    inv: {},
     avatar: user.displayAvatarURL(),
     username: user.username,
     blacklisted: false,
