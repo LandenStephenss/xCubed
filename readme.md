@@ -20,3 +20,4 @@ xCubed is a discord bot with simplicity in mind. You are not allowed to use this
 ## Developers
 - **Olykir** - *Does most of the updates, etc* - [LandenStephenss](https://github.com/LandenStephenss)
 - **Flag** - *Does a bit of UI work, but mostly clicks circles* - [Yumiro](https://github.com/Yumiro)
+- **All of the contributors** - *Thank you all for helping*
