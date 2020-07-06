@@ -22,4 +22,3 @@ xCubed is a discord bot with simplicity in mind. You are not allowed to use this
 - **Flag** - *Does a bit of UI work, but mostly clicks circles* - [Yumiro](https://github.com/Yumiro)
 
 
-teest
