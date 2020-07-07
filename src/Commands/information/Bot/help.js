@@ -20,7 +20,10 @@ module.exports = class Help extends require("../../../Stuctures/Commands/Generic
         };
         var groups = [];
         client.commands.forEach((command) => {
-          if (!groups.includes(command.help.category.toLowerCase())) {
+          if (
+            !groups.includes(command.help.category.toLowerCase()) &&
+            command.config.enabled
+          ) {
             groups.push(command.help.category.toLowerCase());
           }
         });

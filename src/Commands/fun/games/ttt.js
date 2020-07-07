@@ -5,7 +5,8 @@ module.exports = class TTT extends require("../../../Stuctures/Commands/GenericC
       name: "ttt",
       aliases: ["tictactoe"],
       description: "Play some rounds of tictactoe",
-      enabled: false
+      enabled: false,
+      category: "fun",
     });
   }
 
