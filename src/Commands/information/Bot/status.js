@@ -1,6 +1,6 @@
 const moment = require("moment");
 require("moment-duration-format");
-const { FormatNumber } = require("../../../Assets/Util");
+const { FormatNumber } = require("../../../Assets/util");
 module.exports = class Status extends require("../../../Stuctures/Commands/GenericCommand") {
   constructor() {
     super({
@@ -8,7 +8,7 @@ module.exports = class Status extends require("../../../Stuctures/Commands/Gener
       description: "view xCubed's status!",
       category: "information",
       aliases: ["stats", "botinfo", "botstatus"],
-      botPerms: ["EMBED_LINKS"]
+      botPerms: ["EMBED_LINKS"],
     });
   }
   run({ client }) {
