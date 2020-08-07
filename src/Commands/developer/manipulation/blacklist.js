@@ -35,14 +35,12 @@ module.exports = class Blacklist extends require("../../../Stuctures/Commands/Ge
             { $set: { blacklisted: true } }
           );
           return `\`${user.tag}\` blacklisted`;
-          break;
         default:
           await client.userDB.updateOne(
             { _id: user.id },
             { $set: { blacklisted: true } }
           );
           return `\`${user.tag}\` blacklisted`;
-          return;
       }
     }
   }

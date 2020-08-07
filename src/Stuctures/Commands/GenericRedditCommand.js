@@ -33,6 +33,7 @@ class GenericRedditCommand {
       developer,
       enabled,
       cooldown,
+      filePath: null
     };
   }
   async run({ message }) {

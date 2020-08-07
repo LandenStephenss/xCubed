@@ -30,6 +30,7 @@ class GenericCommand {
       developer,
       enabled,
       cooldown,
+      filePath: null
     };
   }
 }

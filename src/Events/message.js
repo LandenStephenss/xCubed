@@ -2,7 +2,8 @@ const User = require("../Stuctures/Database/User.js");
 const Guild = require("../Stuctures/Database/Guild.js");
 const NoXP = new Set();
 const { Levels } = require("../Assets/util");
-const { workerData } = require("worker_threads");
+// Other events for AutoMod
+
 class Message {
   constructor(client) {
     this.client = client;
@@ -70,6 +71,23 @@ class Message {
       }, 30 * 1000);
     }
 
+    // AutoMod Shits
+    // here is the mention shit
+    const MassMention = require("../Assets/AutoMod/MassMention");
+    const maxMentions = 5;
+    if (message.mentions.members.size >= maxMentions) {
+      MassMention(message, "members");
+    } else if (message.mentions.roles.size >= maxMentions) {
+      MassMention(message, "roles");
+    }
+
+    // max chars
+    const MaxChar = require("../Assets/AutoMod/1800.js");
+    if (message.content.length >= 1800) {
+      MaxChar(message);
+    }
+
+    // command handling
     const {
       settings: { prefix },
     } = await this.client.guildDB.findOne({ _id: message.guild.id });

@@ -16,7 +16,9 @@ module.exports = class Help extends require("../../../Stuctures/Commands/Generic
           title: `xCubed Commands! (${client.commands.size})`,
           color: 8879851,
           fields: [],
-          footer: { text: `${message.guild.name}'s prefix is ${prefix}` },
+          footer: {
+            text: `${message.guild.name}'s prefix is ${prefix} | Visit https://xcubed.xyz/commands to see a full list of commands!`,
+          },
         };
         var groups = [];
         client.commands.forEach((command) => {
@@ -65,8 +67,10 @@ module.exports = class Help extends require("../../../Stuctures/Commands/Generic
               { name: "Description", value: Command.help.description },
               {
                 name: "Usage",
-                value:
-                  prefix + Command.help.usage.replace("{c}", Command.help.name),
+                value: Command.help.usage.replace(
+                  "{c}",
+                  prefix + Command.help.name
+                ),
               },
               {
                 name: "Aliases",

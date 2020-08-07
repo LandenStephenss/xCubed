@@ -10,7 +10,7 @@ class messageDelete {
     if (modlog === null || message.author.bot) return;
     this.client.channels.cache.get(modlog).send({
       embed: {
-        title: `Message deleted`,
+        title: `Message Deleted`,
         color: 8879851,
         fields: [
           {

@@ -1,6 +1,7 @@
 const { Client, Collection } = require("discord.js");
 const { MongoClient } = require("mongodb");
 var DEVELOPMENT = process.argv.includes("--dev");
+const { readdir } = require("fs");
 class xCubed extends Client {
   constructor(options = {}) {
     super();
@@ -34,6 +35,39 @@ class xCubed extends Client {
         );
       }
     });
+  }
+
+  loadCommand(file) {
+    if (file.includes(".json")) return;
+    if (!file.includes(".js")) {
+      readdir(`./src/Commands/${file}`, (err, files) => {
+        files.forEach((command) => {
+          this.loadCommand(`/${file}/${command}`);
+        });
+      });
+    } else {
+      if (file.includes("asset.")) return;
+      try {
+        const Command = new (require("../Commands/" + file))();
+        this.commands.set(Command.help.name, Command);
+        Command.config.filePath = file;
+        Command.config.aliases.forEach((alias) => {
+          this.aliases.set(alias, Command.help.name);
+        });
+        console.log(
+          `\u001b[38;5;33mCommand \u001b[31m${Command.help.name}\u001b[38;5;33m loaded successfully\u001b[39m`
+        );
+      } catch (e) {
+        console.log(e);
+        console.error(
+          `\u001b[31mThere was a problem loading command ${
+            file.split(".js")[0].split("/")[
+              file.split(".js")[0].split("/").length - 1
+            ]
+          }\u001b[39m\n${e}`
+        );
+      }
+    }
   }
 }
 

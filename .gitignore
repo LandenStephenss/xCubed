@@ -1,6 +1,4 @@
 node_modules
 package-lock.json
-devConfig.json
-prodConfig.json
-sharding.js
-commands.json
+dev.config.json
+prod.config.json

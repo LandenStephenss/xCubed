@@ -7,7 +7,7 @@ module.exports = class Inventory extends require("../../../Stuctures/Commands/Ge
       aliases: ["inv"],
       category: "currency",
       description: "Check out what you have in your pockets",
-      enabled: true,
+      enabled: false,
     });
   }
   async run({ message: { author }, client }) {

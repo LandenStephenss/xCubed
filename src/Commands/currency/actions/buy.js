@@ -8,6 +8,7 @@ module.exports = class Buy extends require("../../../Stuctures/Commands/GenericC
       category: "currency",
       description: "Buy an item from the shop",
       usage: "{c} `<item>`",
+      enabled: false
     });
   }
 
