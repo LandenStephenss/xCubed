@@ -28,6 +28,24 @@ const Guild = (guild) => {
         adminRole: null,
       },
     },
+    autoMod: {
+      noNoWords: new Array(),
+      fastMsg: false,
+      massMention: false, // done
+      largeMessage: false, // done
+      allCaps: false,
+      invites: false,
+      spoilers: false,
+      duplicateText: false,
+      allLinks: false,
+      imageSpam: false,
+      selfbotDetect: false,
+      // AutoMod Settings
+      mentionCount: 5, // done in mass mention
+      autoMuteTime: 10000, // this is in ms btw
+      maxEmote: 6,
+      maxChars: 1800, // this is done too
+    },
   };
 };
 
