@@ -2,17 +2,19 @@ const { Client, Collection } = require("discord.js");
 const { MongoClient } = require("mongodb");
 var DEVELOPMENT = process.argv.includes("--dev");
 const { readdir } = require("fs");
+const { logger } = require("../Assets/util");
 class xCubed extends Client {
   constructor(options = {}) {
     super();
     this.commands = new Collection();
     this.aliases = new Collection();
     this.commandsUsed = 0;
+    this.logger = logger;
   }
   init() {
     this.config = require(`../../${DEVELOPMENT ? "dev" : "prod"}.config.json`);
     this.initMongo(this.config.MongoURL);
-    console.log(
+    this.logger.debug(
       `\u001b[39mxCubed started, running in ${
         DEVELOPMENT ? "\u001b[31mdevelopment" : "\u001b[31mproduction"
       } \u001b[39mmode.`
@@ -30,7 +32,7 @@ class xCubed extends Client {
         this.guildDB = response
           .db(DEVELOPMENT ? "xCubedBeta" : "xCubed")
           .collection("guilds");
-        console.log(
+        this.logger.info(
           "\u001b[31mMongoDB \u001b[38;5;33mconnected successfully\u001b[39m"
         );
       }
@@ -54,18 +56,11 @@ class xCubed extends Client {
         Command.config.aliases.forEach((alias) => {
           this.aliases.set(alias, Command.help.name);
         });
-        console.log(
+        this.logger.debug(
           `\u001b[38;5;33mCommand \u001b[31m${Command.help.name}\u001b[38;5;33m loaded successfully\u001b[39m`
         );
       } catch (e) {
-        console.log(e);
-        console.error(
-          `\u001b[31mThere was a problem loading command ${
-            file.split(".js")[0].split("/")[
-              file.split(".js")[0].split("/").length - 1
-            ]
-          }\u001b[39m\n${e}`
-        );
+        this.logger.error(e);
       }
     }
   }

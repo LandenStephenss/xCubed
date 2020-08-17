@@ -1,6 +1,9 @@
 class reconnecting {
+  constructor(client) {
+    this.log = client.logger
+  }
   run() {
-    console.log("\u001b[32xCubed is reconnecting...\u001b[39m");
+    this.log.debug("xCubed is reconnecting...");
   }
 }
 

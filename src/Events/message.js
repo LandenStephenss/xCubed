@@ -156,7 +156,7 @@ class Message {
           });
           if (res) {
             if (typeof res === "string" || typeof res === "object") {
-              console.log(
+              this.client.logger.debug(
                 `\u001b[31m${message.author.tag}\u001b[38;5;33m ran command \u001b[31m${Command.help.name}\u001b[39m ("${message.content}")`
               );
               if (res.embed && !res.embed.color) {
